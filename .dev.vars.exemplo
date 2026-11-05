@@ -1,0 +1,9 @@
+# Copie este arquivo para .dev.vars (que não vai para o Git) e preencha.
+# Ele é usado só no seu computador: npm run banco e npm run dev.
+# No site publicado, os mesmos valores ficam como segredos na Cloudflare (npx wrangler secret put ...).
+
+# Neon: no projeto, botão Connect > copie a connection string (com "-pooler" no endereço)
+DATABASE_URL=postgresql://usuario:senha@ep-exemplo-pooler.sa-east-1.aws.neon.tech/neondb?sslmode=require
+
+# Senha que o painel usa para ler as visitas (letras e números, sem espaço)
+CHAVE_LEITURA=troque-esta-chave

@@ -1,0 +1,33 @@
+# segredos e configuração real
+.env
+.env.*
+!.env.exemplo
+!.env.example
+.dev.vars
+.dev.vars.*
+!.dev.vars.exemplo
+segredo*
+config.js
+
+# ferramentas e caches
+node_modules/
+.wrangler/
+.vscode/
+site/dist/
+*.log
+Thumbs.db
+.DS_Store
+
+# backups e arquivos soltos
+*.bak*
+_backup*
+_bak*
+_original/
+*.zip
+
+# dados reais (exportações do painel etc.)
+*.xlsx
+*.csv
+!painel/sessoes-exemplo.csv
+*.pdf
+*.docx

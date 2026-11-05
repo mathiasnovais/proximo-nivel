@@ -1,0 +1,72 @@
+PAINEL PRÓXIMO NÍVEL · como colocar para funcionar
+====================================================
+
+Três peças: a planilha (guarda os dados, você nunca precisa abrir),
+o site (manda as visitas para a planilha) e o painel (painel.html, lê e mostra tudo).
+
+----------------------------------------------------
+1) A planilha e o script (uns 5 minutos, uma vez só)
+----------------------------------------------------
+a. Entre no Google Sheets com a conta que você quiser (pessoal, do curso, tanto faz) e crie uma planilha em branco.
+   Dê o nome que quiser, por exemplo "Próximo Nível · visitas".
+b. No menu da planilha: Extensões > Apps Script. Abre um editor com um arquivo "Código.gs".
+c. Apague o que está lá, cole TODO o conteúdo do arquivo Codigo.gs e salve (ícone de disquete ou Ctrl+S).
+d. Na linha "var CHAVE_LEITURA = 'troque-esta-chave';" troque por uma senha sua (letras e números, sem espaço).
+   É ela que protege a leitura do painel. Salve de novo.
+e. Clique em Implantar (botão azul, canto superior direito) > Nova implantação.
+   - No ícone de engrenagem ao lado de "Selecionar o tipo", escolha "App da Web".
+   - Descrição: coletor do site (qualquer texto).
+   - Executar como: Eu.
+   - Quem pode acessar: Qualquer pessoa.   <- importante, senão o site não consegue gravar
+   - Implantar.
+f. O Google pede autorização: Autorizar acesso > escolha a conta > se aparecer "app não verificado",
+   clique em Avançado > "Acessar ... (não seguro)" > Permitir. É o seu próprio script, é seguro.
+g. Copie a "URL do app da Web" (termina em /exec). Guarde-a junto com a chave.
+
+Teste rápido: abra no navegador  SUA_URL?chave=SUA_CHAVE  e deve aparecer {"ok":true,...,"sessoes":[]}.
+
+----------------------------------------------------
+2) O site
+----------------------------------------------------
+No arquivo index.html (ou em src/app.js do projeto), procure a linha
+   var COLETOR_URL = '';
+e cole a URL entre as aspas:
+   var COLETOR_URL = 'https://script.google.com/macros/s/.../exec';
+Suba o index.html na hospedagem. Pronto: cada visita passa a ser gravada.
+(Se preferir, me manda a URL que eu gero o arquivo já com ela.)
+
+----------------------------------------------------
+3) O painel
+----------------------------------------------------
+Suba o painel.html na mesma hospedagem, numa pasta que só você conhece, por exemplo
+   seudominio.com.br/painel-7x9k/painel.html
+(ele já pede para os buscadores não indexarem). Abra, clique em "Conectar planilha",
+cole a URL e a chave, e clique em "Salvar e carregar". Fica salvo no navegador.
+O botão "Atualizar" busca as visitas novas. "Exportar CSV" baixa as visitas do período filtrado.
+Também dá para abrir o painel.html direto no computador, sem hospedar.
+
+----------------------------------------------------
+O que cada visita registra
+----------------------------------------------------
+quando começou e terminou, dispositivo e largura da tela, origem (UTM ou site de onde veio),
+tempo com a página visível, até onde rolou, seções que viu (na ordem), botões de comprar
+clicados e em que segundo, fotos abertas, perguntas abertas, se viu as três caixas do método,
+seção em que saiu, e o caminho completo ("0s hero > 12s evolucao > 30s clique:oferta-meio").
+
+----------------------------------------------------
+Links com UTM (recomendado)
+----------------------------------------------------
+Para o painel separar bio, stories e posts, use links assim:
+   https://seudominio.com.br/?utm_source=instagram&utm_medium=bio&utm_campaign=link_bio
+   https://seudominio.com.br/?utm_source=instagram&utm_medium=stories&utm_campaign=story_lancamento
+   https://seudominio.com.br/?utm_source=whatsapp&utm_medium=mensagem&utm_campaign=lista_vip
+
+----------------------------------------------------
+Limites e cuidados
+----------------------------------------------------
+- A planilha aguenta sem problema dezenas de milhares de visitas. O painel lê tudo de uma vez;
+  se um dia passar de uns 20 mil registros, me avisa que eu ligo o filtro por data na leitura.
+- A conta do Google tem uma cota diária generosa para esse tipo de script (milhares de visitas por dia).
+- Nenhum dado pessoal é gravado: não há nome, e-mail nem IP, só um código aleatório por navegador.
+- Se trocar a chave no script, precisa clicar em Implantar > Gerenciar implantações > editar > Nova versão,
+  senão a URL continua rodando a versão antiga.

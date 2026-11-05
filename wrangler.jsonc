@@ -1,0 +1,24 @@
+// Configuração da Cloudflare Workers do Próximo Nível.
+// Publicar: npm run publicar   (passo a passo completo em PUBLICAR.md)
+{
+  "name": "proximo-nivel",
+  "main": "api/index.js",
+  "compatibility_date": "2026-10-01",
+  // Troque pelo Account ID da sua conta (aparece em npx wrangler whoami).
+  // Enquanto estiver com este texto, o deploy falha de propósito: nada sobe na conta errada.
+  "account_id": "SEU_ACCOUNT_ID",
+  // dist/ sai como arquivo estático (/ = página de vendas, /painel = painel); só /api/* roda o Worker
+  "assets": {
+    "directory": "./dist",
+    "run_worker_first": ["/api/*"]
+  },
+  // endereço provisório nome.conta.workers.dev, para testar antes do domínio
+  "workers_dev": true,
+  // Domínio próprio: descomente e troque quando o domínio já estiver ativo na conta
+  // (nameservers trocados no Registro.br). A Cloudflare cria o DNS e o certificado sozinha.
+  // "routes": [
+  //   { "pattern": "seudominio.com.br", "custom_domain": true },
+  //   { "pattern": "www.seudominio.com.br", "custom_domain": true }
+  // ],
+  "observability": { "enabled": true }
+}

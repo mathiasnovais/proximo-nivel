@@ -1,0 +1,16 @@
+{
+  "name": "proximo-nivel",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "banco": "node --env-file=.dev.vars banco/cria-banco.mjs",
+    "publicar": "wrangler deploy"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.2.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.157.0"
+  }
+}

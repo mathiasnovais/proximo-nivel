@@ -1,0 +1,306 @@
+<!-- NAVEGAÇÃO -->
+<header class="sticky z-50 bg-papel transition-shadow duration-200 [&.rolou]:shadow-flutuante" style="top: min(env(safe-area-inset-top, 0px), 60px)" id="topo">
+  <div class="wrap flex items-center justify-between gap-3 py-3.5 md:gap-6">
+    <div class="flex min-w-0 items-center gap-3.5" id="promo" role="timer" aria-live="off">
+      <span class="hidden max-w-[8em] text-xs font-bold uppercase leading-[14px] tracking-[.1em] text-laranja-700 md:block">A promoção acaba em</span>
+      <span class="flex items-start gap-1 md:gap-1.5" aria-label="Tempo restante da promoção">
+        <span class="tempo-bloco"><b id="ph">00</b><i>horas</i></span><span class="tempo-sep">:</span>
+        <span class="tempo-bloco"><b id="pm">00</b><i>min</i></span><span class="tempo-sep">:</span>
+        <span class="tempo-bloco"><b id="ps">00</b><i>seg</i></span>
+      </span>
+    </div>
+    <span class="marca text-marinho">Próximo Nível</span>
+  </div>
+  <!-- faixa dupla: a linha laranja mostra o quanto da página já foi lido -->
+  <div class="wrap grid gap-1" aria-hidden="true">
+    <div class="h-[5px] bg-laranja-100"><i class="block h-full w-0 bg-laranja transition-[width] duration-100 ease-linear" id="progresso"></i></div>
+    <div class="h-[5px] w-full bg-marinho"></div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="relative overflow-hidden bg-laranja pb-[clamp(36px,6vw,88px)] pt-[clamp(36px,6vw,96px)] text-marinho" id="hero">
+  <div class="listras pointer-events-none absolute inset-0 animate-desliza opacity-[.14]" aria-hidden="true"></div>
+  <!-- FOTO DE FUNDO (opcional): <img class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-30 mix-blend-multiply" src="foto.jpg" alt=""> -->
+  <div class="wrap relative grid gap-6 md:gap-[30px]">
+    <h1 class="display titulo-1 anim max-w-[11em] [&_em]:text-papel" style="--d:.15s">A selva está <em>dentro de você.</em></h1>
+    <p class="lead anim !mt-0 max-w-[30em]" style="--d:.3s">Você sabe que pode ser muito mais do que está sendo. Próximo Nível é o curso em duas construções, com videoaulas e conteúdo premium: primeiro corpo, mente, energia e ambiente; depois conteúdo, audiência, influência e renda. Sem milagre: com o próximo passo possível, hoje.</p>
+    <p class="anim -mt-2 text-base font-medium leading-[22px]" style="--d:.35s">Corpo, mente, conteúdo e influência</p>
+    <div class="anim flex flex-wrap gap-3" style="--d:.45s">
+      <a data-local="hero" class="btn btn-compra btn-escuro w-full py-[18px] md:w-auto md:py-4" href="#oferta">Quero o próximo nível</a>
+    </div>
+  </div>
+</section>
+
+<!-- LETREIRO -->
+<div class="group overflow-hidden border-y border-concreto bg-papel py-3.5" aria-hidden="true">
+  <div class="flex w-max animate-corre group-hover:[animation-play-state:paused] [&>span]:whitespace-nowrap [&>span]:px-5 [&>span]:font-display [&>span]:text-[clamp(26px,3.4vw,40px)] [&>span]:uppercase [&>span]:italic [&>span]:leading-none [&>span:nth-child(even)]:text-laranja">
+    <span>Corpo</span><span>·</span><span>Mente</span><span>·</span><span>Rotina</span><span>·</span><span>Energia</span><span>·</span><span>Conteúdo</span><span>·</span><span>Audiência</span><span>·</span><span>Influência</span><span>·</span><span>Renda</span><span>·</span>
+    <span>Corpo</span><span>·</span><span>Mente</span><span>·</span><span>Rotina</span><span>·</span><span>Energia</span><span>·</span><span>Conteúdo</span><span>·</span><span>Audiência</span><span>·</span><span>Influência</span><span>·</span><span>Renda</span><span>·</span>
+  </div>
+</div>
+
+<!-- HÁBITOS (fotos) -->
+<section class="band bg-cinza" id="evolucao">
+  <div class="wrap">
+    <div class="cabeca" data-reveal>
+      <p class="rotulo">Por dentro e por fora</p>
+      <h2 class="display titulo-2">Você constrói. <em>O mundo vê.</em></h2>
+      <p class="lead">Primeiro por dentro: corpo, mente, energia e ambiente. Depois para fora: câmera, luz, edição e audiência.</p>
+    </div>
+    <div class="grupo-rotulo" data-nome="Módulo 1 · Construa sua base" data-reveal><h3 class="display grupo-titulo"><span class="text-laranja">Módulo 1</span><span class="mx-2 text-concreto">·</span>Construa sua base</h3></div>
+    <!-- FOTOS DO MÓDULO 1: em cada card, troque a div.foto-vazia por <img class="foto" src="corrida.jpg" alt="..."> -->
+    <div class="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
+      <figure class="evo-card" tabindex="0" role="button" aria-haspopup="dialog"><div><img class="foto" src="img/movimento.jpg" alt="Homem correndo no calçadão da praia ao nascer do sol" loading="lazy"></div><figcaption><b>Movimento</b><span>Corrida, bike, natação, luta ou bola. Qualquer esporte conta, não só academia.</span></figcaption></figure>
+      <figure class="evo-card" tabindex="0" role="button" aria-haspopup="dialog"><div><img class="foto" src="img/forca.jpg" alt="Mulher fazendo levantamento terra com barra numa garagem iluminada pelo sol" loading="lazy"></div><figcaption><b>Força</b><span>Um corpo mais capaz para a vida real.</span></figcaption></figure>
+      <figure class="evo-card" tabindex="0" role="button" aria-haspopup="dialog"><div><img class="foto" src="img/alimentacao.jpg" alt="Prato com arroz, feijão, frango grelhado e salada colorida sobre mesa de madeira" loading="lazy"></div><figcaption><b>Alimentação</b><span>Seu corpo começa no que você repete.</span></figcaption></figure>
+      <figure class="evo-card" tabindex="0" role="button" aria-haspopup="dialog"><div><img class="foto" src="img/hidratacao.jpg" alt="Garrafa de água com gotas ao sol e, ao fundo, mulher amarrando o tênis para treinar" loading="lazy"></div><figcaption><b>Hidratação</b><span>Água do jeito certo, ao longo do dia.</span></figcaption></figure>
+      <figure class="evo-card" tabindex="0" role="button" aria-haspopup="dialog"><div><img class="foto" src="img/sono.jpg" alt="Homem dormindo tranquilo ao amanhecer, com celular virado para baixo e copo de água na mesa de cabeceira" loading="lazy"></div><figcaption><b>Sono</b><span>Recuperação também é evolução.</span></figcaption></figure>
+      <figure class="evo-card" tabindex="0" role="button" aria-haspopup="dialog"><div><img class="foto" src="img/ambiente.jpg" alt="Três amigos estudando juntos à mesa, com cadernos abertos e luz natural" loading="lazy"></div><figcaption><b>Ambiente</b><span>Você escolhe onde vai crescer.</span></figcaption></figure>
+    </div>
+    <div class="grupo-rotulo mt-[clamp(48px,7vw,80px)]" data-nome="Módulo 2 · Construa sua influência" data-reveal><h3 class="display grupo-titulo"><span class="text-laranja">Módulo 2</span><span class="mx-2 text-concreto">·</span>Construa sua influência</h3></div>
+    <!-- FOTOS DO MÓDULO 2: troque cada div.foto-vazia por <img class="foto" src="gravacao.jpg" alt="..."> -->
+    <div class="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
+      <figure class="evo-card" tabindex="0" role="button" aria-haspopup="dialog"><div><img class="foto" src="img/gravacao.jpg" alt="Mulher gravando um vídeo em casa, com o celular no tripé mostrando o preview da gravação" loading="lazy"></div><figcaption><b>Gravação</b><span>Comece com o que você tem: o seu celular.</span></figcaption></figure>
+      <figure class="evo-card" tabindex="0" role="button" aria-haspopup="dialog"><div><img class="foto" src="img/luz.jpg" alt="Homem ajustando um ring light ao lado de uma luminária de mesa, em casa" loading="lazy"></div><figcaption><b>Luz</b><span>Luz natural ou uma lâmpada bem posicionada.</span></figcaption></figure>
+      <figure class="evo-card" tabindex="0" role="button" aria-haspopup="dialog"><div><img class="foto" src="img/cenario.jpg" alt="Canto de sala arrumado para gravar, com cadeira, plantas e prateleira, e o celular no tripé em primeiro plano" loading="lazy"></div><figcaption><b>Cenário</b><span>Um canto arrumado vale mais que um estúdio.</span></figcaption></figure>
+      <figure class="evo-card" tabindex="0" role="button" aria-haspopup="dialog"><div><img class="foto" src="img/equipamento.jpg" alt="Kit simples de criador de conteúdo sobre a mesa: celular, tripé pequeno, microfone de lapela, fone e carregador portátil" loading="lazy"></div><figcaption><b>Equipamento</b><span>Tripé, microfone de lapela e o que couber no bolso.</span></figcaption></figure>
+      <figure class="evo-card" tabindex="0" role="button" aria-haspopup="dialog"><div><img class="foto" src="img/edicao.jpg" alt="Jovem no sofá editando um vídeo no celular, com a linha do tempo na tela" loading="lazy"></div><figcaption><b>Edição</b><span>Cortar o excesso e deixar a mensagem clara.</span></figcaption></figure>
+      <figure class="evo-card" tabindex="0" role="button" aria-haspopup="dialog"><div><img class="foto" src="img/audiencia.jpg" alt="Duas mulheres falando num palco para uma plateia lotada, com pessoas filmando pelo celular" loading="lazy"></div><figcaption><b>Audiência</b><span>Ideia, produção, publicação, atenção.</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA (meio da página) -->
+<section class="band escura" id="oferta-meio">
+  <div class="wrap grid items-start gap-[clamp(32px,5vw,72px)] lg:grid-cols-2">
+    <div data-reveal>
+      <h2 class="display titulo-2">Chega de adiar <em>a vida que você quer.</em></h2>
+      <p class="lead mt-6 text-apoio-escuro">O corpo que você quer. A mente que não trava. O conteúdo que você sempre quis colocar no mundo. Nada disso depende de sorte, depende da primeira decisão. E ela está a um clique daqui.</p>
+      <div class="mt-10 grid grid-cols-3 gap-4">
+        <div class="numero"><b>Se cuidar</b><span>Corpo, energia e cabeça no lugar, sem precisar virar atleta.</span></div>
+        <div class="numero"><b>Produzir</b><span>Ligar a câmera e falar com naturalidade, com o celular que você já tem.</span></div>
+        <div class="numero"><b>Conquistar</b><span>Audiência, confiança e, se fizer sentido, renda. O que você sempre quis.</span></div>
+      </div>
+    </div>
+    <article class="oferta-card cartao" data-reveal style="--d:.15s" aria-label="Oferta do curso Próximo Nível">
+      <p class="rotulo">Curso completo · acesso imediato</p>
+      <h3 class="display text-[clamp(36px,4vw,52px)] leading-[.95]">Próximo Nível</h3>
+      <p class="mt-5 text-apoio">Videoaulas e conteúdo premium em dois módulos: corpo, mente, conteúdo e influência.</p>
+      <div class="mt-6 border-t border-concreto pt-5">
+        <div class="flex flex-wrap items-baseline gap-3">
+          <s class="text-[17px] leading-[27px] text-apoio">[Preço antigo]</s>
+          <span class="font-display text-[clamp(56px,7vw,80px)] italic leading-none">[Preço]</span>
+        </div>
+        <p class="mt-1 text-[15px] leading-[22px] text-apoio">ou [N]x de [parcela] no cartão</p>
+      </div>
+      <a data-local="oferta-meio" class="btn btn-compra btn-grande" href="#oferta">Quero o próximo nível</a>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="selo selo-lancamento">Acesso imediato</span>
+        <span class="selo selo-neutro">Pagamento seguro</span>
+        <span class="selo selo-neutro">[Garantia de X dias]</span>
+      </div>
+      <p class="mt-5 text-sm leading-5 text-apoio">Nada aqui promete riqueza, seguidores garantidos ou resultado milagroso. O curso organiza o caminho. O passo é seu.</p>
+    </article>
+  </div>
+</section>
+
+
+
+<!-- A VIRADA (seção presa: as caixas são liberadas conforme a rolagem) -->
+<section class="pin" id="metodo">
+  <div class="pin-trilho" id="metodo-pin">
+    <div class="pin-tela">
+      <div class="wrap">
+        <div class="max-w-[46em]">
+          <p class="rotulo">A jornada começa de dentro</p>
+          <h2 class="display titulo-2">Seja a melhor versão <em>de si mesmo.</em></h2>
+          <p class="lead pin-lead">Não precisa destruir quem é para construir quem pode ser. Precisa retirar, uma escolha de cada vez, aquilo que impede essa pessoa de aparecer. O próximo nível não é uma versão perfeita. É uma versão mais consciente, capaz, presente e responsável pelas próprias escolhas.</p>
+        </div>
+        <div class="pin-caixas">
+          <article class="pilar cartao" data-reveal style="--d:0s">
+            <span class="num">01</span>
+            <h3 class="display">Começar pequeno</h3>
+            <p>A regra do próximo passo: quando o problema parecer grande demais, reduza até encontrar a próxima ação possível. Vinte minutos no projeto parado. A próxima refeição. O primeiro treino da semana.</p>
+          </article>
+          <article class="pilar cartao" data-reveal style="--d:0.18s">
+            <span class="num">02</span>
+            <h3 class="display">Produzir provas</h3>
+            <p>A identidade precisa de provas. Você não anuncia uma nova versão de si mesmo: cada treino cumprido, cada tarefa terminada e cada promessa mantida é uma evidência de quem você está virando.</p>
+          </article>
+          <article class="pilar cartao" data-reveal style="--d:0.36s">
+            <span class="num">03</span>
+            <h3 class="display">Saber retornar</h3>
+            <p>Você vai falhar. O problema começa quando "eu falhei" vira "eu sou assim". Errou? Observe, entenda, ajuste e volte. Não espere segunda-feira.</p>
+          </article>
+        </div>
+        <div class="pin-passos" aria-hidden="true"><i></i><i></i><i></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAIXA: divisória bem fina, laranja e marinho -->
+<div class="faixa-divisao" aria-hidden="true"></div>
+
+<!-- SEQUÊNCIAS -->
+<section class="band bg-white" id="maquina">
+  <div class="wrap">
+    <div class="cabeca" data-reveal>
+      <p class="rotulo">O método, passo a passo</p>
+      <h2 class="display titulo-2">Do primeiro passo <em>ao próximo nível.</em></h2>
+    </div>
+    <div class="grupo-rotulo !mb-4" data-nome="Módulo 1 · Construa sua base" data-reveal><h3 class="display grupo-titulo"><span class="text-laranja">Módulo 1</span><span class="mx-2 text-concreto">·</span>Construa sua base</h3></div>
+    <ol class="cadeia">
+      <li style="--d:0s"><span>01</span><strong>Decisão</strong><span>Uma mudança que você consegue sustentar.</span></li>
+      <li style="--d:.15s"><span>→</span><strong>Corpo</strong><span>Alimentação, força e hidratação.</span></li>
+      <li style="--d:.3s"><span>→</span><strong>Mente</strong><span>Quebre o automático.</span></li>
+      <li style="--d:.45s"><span>→</span><strong>Energia</strong><span>Sono e recuperação.</span></li>
+      <li style="--d:.6s"><span>→</span><strong>Ambiente</strong><span>Onde você vai crescer.</span></li>
+      <li style="--d:.75s"><span>→</span><strong>Provas</strong><span>A primeira evidência de que você consegue.</span></li>
+    </ol>
+    <div class="grupo-rotulo mt-12 !mb-4" data-nome="Módulo 2 · Construa sua influência" data-reveal><h3 class="display grupo-titulo"><span class="text-laranja">Módulo 2</span><span class="mx-2 text-concreto">·</span>Construa sua influência</h3></div>
+    <ol class="cadeia">
+      <li style="--d:0s"><span>01</span><strong>Conteúdo</strong><span>Ideia, produção, publicação.</span></li>
+      <li style="--d:.15s"><span>→</span><strong>Atenção</strong><span>As pessoas certas descobrem você.</span></li>
+      <li style="--d:.3s"><span>→</span><strong>Confiança</strong><span>Elas voltam e acompanham.</span></li>
+      <li style="--d:.45s"><span>→</span><strong>Influência</strong><span>Sua opinião gera ação.</span></li>
+      <li style="--d:.6s"><span>→</span><strong>Oportunidade</strong><span>Marcas, serviços, produtos.</span></li>
+      <li style="--d:.75s"><span>→</span><strong>Receita</strong><span>Valor entregue vira renda.</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- CHAMADA 2 -->
+<section class="cta-faixa" id="chamada-2">
+  <div class="wrap flex flex-wrap items-center justify-between gap-x-8 gap-y-5" data-reveal>
+    <div>
+      <p class="rotulo">A promoção está no ar</p>
+      <p class="display text-[clamp(32px,4.4vw,52px)] leading-[.95]">O próximo passo é <em>agora.</em></p>
+    </div>
+    <a data-local="chamada-2" class="btn btn-compra btn-escuro w-full py-[18px] md:w-auto md:py-4" href="#oferta">Quero o próximo nível</a>
+  </div>
+</section>
+
+<!-- PARA QUEM É -->
+<section class="band bg-white" id="para-quem">
+  <div class="wrap">
+    <div class="cabeca" data-reveal>
+      <p class="rotulo">Antes de comprar</p>
+      <h2 class="display titulo-2">Para quem é<br><em>o Próximo Nível.</em></h2>
+    </div>
+    <div class="min-w-0 rounded-lg bg-cinza p-[clamp(28px,4vw,48px)]" data-reveal>
+      <h3 class="display text-[clamp(30px,3.6vw,44px)]">É para você se</h3>
+      <ul class="lista md:grid-cols-2 md:gap-x-10 md:gap-y-4">
+        <li>Quer começar de vez, ou vive começando e parando.</li>
+        <li>Quer um corpo mais capaz sem precisar virar atleta.</li>
+        <li>Quer dormir melhor, comer melhor e ter mais energia, sem radicalismo.</li>
+        <li>Sente que a mente trava antes do corpo e quer sair do piloto automático.</li>
+        <li>Já tentou mudar sozinho e sentiu falta de um caminho claro, com começo, meio e fim.</li>
+        <li>Tem pouco tempo e precisa de um método que caiba na rotina, não de mais uma obrigação.</li>
+        <li>Quer criar conteúdo com o celular que já tem, sem equipe e sem estúdio.</li>
+        <li>Trava na frente da câmera e quer aprender a falar com naturalidade.</li>
+        <li>Prefere um passo possível hoje a um plano perfeito para segunda-feira.</li>
+        <li>Quer transformar o que sabe em audiência, confiança e, se fizer sentido, renda.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA (final) -->
+<section class="band escura !bg-marinho-claro" id="oferta">
+  <div class="wrap grid items-start gap-[clamp(32px,5vw,72px)] lg:grid-cols-2">
+    <div data-reveal>
+      <p class="rotulo">Linha de chegada</p>
+      <h2 class="display titulo-2">O próximo nível começa com o <em>próximo passo.</em></h2>
+      <p class="lead mt-6 text-apoio-escuro">Você não precisa ter todas as respostas agora. Precisa transformar a próxima resposta em uma ação. Esta pode ser ela.</p>
+      <div class="mt-10 grid grid-cols-3 gap-4">
+        <div class="numero"><b>Se cuidar</b><span>Corpo, energia e cabeça no lugar, sem precisar virar atleta.</span></div>
+        <div class="numero"><b>Produzir</b><span>Ligar a câmera e falar com naturalidade, com o celular que você já tem.</span></div>
+        <div class="numero"><b>Conquistar</b><span>Audiência, confiança e, se fizer sentido, renda. O que você sempre quis.</span></div>
+      </div>
+    </div>
+    <article class="oferta-card cartao" data-reveal style="--d:.15s" aria-label="Oferta do curso Próximo Nível">
+      <p class="rotulo">Curso completo · acesso imediato</p>
+      <h3 class="display text-[clamp(36px,4vw,52px)] leading-[.95]">Próximo Nível</h3>
+      <p class="mt-5 text-apoio">Videoaulas e conteúdo premium em dois módulos: corpo, mente, conteúdo e influência.</p>
+      <a data-local="oferta-final" class="btn btn-compra btn-grande" href="#oferta" id="comprar">Quero o próximo nível</a>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="selo selo-lancamento">Acesso imediato</span>
+        <span class="selo selo-neutro">Pagamento seguro</span>
+        <span class="selo selo-neutro">[Garantia de X dias]</span>
+      </div>
+      <p class="mt-5 text-sm leading-5 text-apoio">Nada aqui promete riqueza, seguidores garantidos ou resultado milagroso. O curso organiza o caminho. O passo é seu.</p>
+    </article>
+  </div>
+</section>
+
+<!-- PERGUNTAS -->
+<section class="band" id="faq">
+  <div class="wrap">
+    <div class="cabeca" data-reveal>
+      <p class="rotulo">Perguntas frequentes</p>
+      <h2 class="display titulo-2">Antes de <em>decidir.</em></h2>
+    </div>
+    <div class="grid max-w-[760px]" id="faq-lista" data-reveal>
+      <div class="faq-item aberto">
+        <h3><button class="faq-botao" type="button" aria-expanded="true" aria-controls="faq-1">Como o curso funciona?<span class="mais" aria-hidden="true">+</span></button></h3>
+        <div class="faq-painel" id="faq-1"><div><p>São dois módulos com 16 capítulos, cada um com videoaula, material de apoio e uma ação prática: desafios, perguntas para preencher e listas. Você assiste no seu ritmo e aplica no mesmo dia.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <h3><button class="faq-botao" type="button" aria-expanded="false" aria-controls="faq-2">Preciso de equipamento para a parte de conteúdo?<span class="mais" aria-hidden="true">+</span></button></h3>
+        <div class="faq-painel" id="faq-2"><div><p>Não. Você começa com o que já tem: o celular e a luz da janela. O módulo 2 mostra como tirar o melhor disso, da gravação à publicação. Tripé e microfone de lapela são próximos passos, nunca condição para começar.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <h3><button class="faq-botao" type="button" aria-expanded="false" aria-controls="faq-4">Serve para quem está começando do zero?<span class="mais" aria-hidden="true">+</span></button></h3>
+        <div class="faq-painel" id="faq-4"><div><p>Sim. Ele foi pensado tanto para quem nunca começou quanto para quem vive começando e parando. Nada de teoria acumulada: cada capítulo termina com uma ação simples, possível de fazer hoje, do primeiro treino da semana ao primeiro vídeo publicado.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <h3><button class="faq-botao" type="button" aria-expanded="false" aria-controls="faq-5">Quando recebo o acesso?<span class="mais" aria-hidden="true">+</span></button></h3>
+        <div class="faq-painel" id="faq-5"><div><p>Logo após o pagamento você já recebe acesso completo a todas as aulas na plataforma.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FECHO -->
+<section class="band escura text-center" id="fecho">
+  <div class="wrap" data-reveal>
+    <p class="rotulo">A selva não desaparece. Você aprende a atravessá-la.</p>
+    <h2 class="display titulo-2 mx-auto max-w-[12em]">Produza a <em>primeira prova.</em></h2>
+    <a data-local="fecho" class="btn btn-compra mt-9" href="#oferta">Quero o próximo nível</a>
+  </div>
+</section>
+</main>
+
+<footer class="escura border-t border-marinho-linha py-8 text-sm leading-5 text-apoio-escuro">
+  <div class="wrap flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
+    <nav class="flex gap-5 [&_a]:no-underline [&_a:hover]:text-laranja" aria-label="Rodapé">
+      <a href="#topo">[Termos de uso]</a>
+      <a href="#topo">[Privacidade]</a>
+    </nav>
+    <span>© <span id="ano">2026</span></span>
+  </div>
+</footer>
+
+<!-- POPUP DAS FOTOS -->
+<div class="popup" id="popup" role="dialog" aria-modal="true" aria-labelledby="popup-titulo" hidden>
+  <div class="popup-fundo" data-fechar></div>
+  <div class="popup-caixa">
+    <button class="popup-fechar" type="button" data-fechar aria-label="Fechar">×</button>
+    <div class="popup-foto" id="popup-foto"></div>
+    <div class="px-6 pb-6 pt-5 md:px-8 md:pb-8">
+      <p class="rotulo !mb-2" id="popup-modulo"></p>
+      <h3 class="display text-[clamp(36px,5vw,48px)] leading-[.95]" id="popup-titulo"></h3>
+      <p class="mt-3 text-apoio" id="popup-texto"></p>
+      <a data-local="popup" class="btn btn-compra btn-grande" href="#oferta" id="popup-comprar">Quero o próximo nível</a>
+    </div>
+  </div>
+</div>
+
+<!-- BARRA FIXA DE COMPRA (celular) -->
+<div class="fixed inset-x-0 bottom-0 z-[55] flex translate-y-[110%] items-center justify-between gap-4 bg-marinho pt-3 text-papel shadow-flutuante transition-transform duration-300 ease-pista md:hidden [&.visivel]:translate-y-0" style="padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px))" id="barra-fixa" aria-hidden="true">
+  <span class="marca hidden text-xl text-papel sm:inline">Próximo Nível</span>
+  <a data-local="barra-fixa" class="btn btn-compra min-w-0 flex-auto px-3 py-3.5 text-[13px]" href="#oferta" tabindex="-1">Quero o próximo nível</a>
+</div>
